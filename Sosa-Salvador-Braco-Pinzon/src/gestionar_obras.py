@@ -8,7 +8,7 @@ class GestionarObra(ABC):
     pass
   
   @abstractmethod
-  def conectar_db(self):
+  def conectar_db(self) -> bool:
     pass
   
   # @abstractmethod
@@ -44,7 +44,7 @@ class GestionarObraCSV(GestionarObra):
       print(f'Error al extraer datos: {error}')
       return pd.DataFrame()
     
-  def conectar_db(self):
+  def conectar_db(self) -> bool:
     try:
       db.connect()
       print('Base de datos conectada exitosamente')
