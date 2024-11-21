@@ -5,7 +5,6 @@ from peewee import DoesNotExist
 def limpiar_dato(datos, nombre):
     if nombre == "licitacion_oferta_empresa":
         # Tabla Empresa
-
         # Eliminar espacios, saltos, caracteres inválidos y convertir en mayúscula
         datos[nombre] = datos[nombre].apply(
             lambda x: (
@@ -31,7 +30,6 @@ def limpiar_dato(datos, nombre):
         return datos
     else:
         # Tablas Etapa, Tipo, Area, Barrio, Contratacion y Financiamiento
-
         # Eliminar espacios y convertir en mayúscula
         datos[nombre] = datos[nombre].str.strip().str.upper()
 
